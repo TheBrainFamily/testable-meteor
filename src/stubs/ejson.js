@@ -1,0 +1,2 @@
+const ejson = {}
+export { ejson }

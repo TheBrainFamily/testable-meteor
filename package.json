@@ -1,0 +1,37 @@
+{
+  "name": "testable-meteor",
+  "version": "1.0.0",
+  "description": "Set of tools and mocks to make your Meteor app Testable without Meteor context",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel src/ -d dist/",
+    "build:watch": "npm run build -- --watch"
+  },
+  "keywords": [
+    "meteor",
+    "tests",
+    "integration",
+    "jest",
+    "react",
+    "blaze",
+    "minimongo"
+  ],
+  "author": "Lukasz Gandecki",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-es2015-without-strict": "0.0.4",
+    "blaze-renderer": "^0.8.0",
+    "js-beautify": "^1.7.5",
+    "underscore": "^1.8.3"
+  },
+  "peerDependencies": {
+    "blaze-renderer": "^0.8.0"
+  },
+  "dependencies": {
+    "fibers": "^2.0.2",
+    "nedb-promise": "^2.0.1"
+  }
+}

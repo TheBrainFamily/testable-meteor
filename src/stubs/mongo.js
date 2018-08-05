@@ -29,13 +29,15 @@ class Collection {
   }
 
   update(query, set, options = {}) {
-    return this.datastore.update(query, set, options);
+    const newQuery = typeof query === 'string' ? { _id: query } : query;
+    return this.datastore.update(newQuery, set, options);
   }
   upsert(query, set) {
     return this.datastore.upsert(query, set);
   }
   remove(query, opts) {
-    return this.datastore.remove(query, opts);
+    const newQuery = typeof query === 'string' ? { _id: query } : query;
+    return this.datastore.remove(newQuery, opts);
   }
 }
 

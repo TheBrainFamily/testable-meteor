@@ -95,8 +95,8 @@ const insert = function (query, collection) {
 const remove = function (query, options, collection) {
   function callDBRemove() {
     const future = new Future();
-    collection.remove(query, options).then(() => {
-      future.return();
+    collection.remove(query, options).then((data) => {
+      future.return(data);
     });
     return future;
   }
@@ -140,7 +140,7 @@ export default function fakeCollection(collection) {
       return insert(query, collection).wait();
     },
     remove(query, options = {}) {
-      remove(query, options, collection).wait();
+      return remove(query, options, collection).wait();
     },
   };
 }
